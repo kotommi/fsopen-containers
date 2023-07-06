@@ -53,10 +53,8 @@ services:
       - 8080:80
     container_name: reverse-proxy-dev
     depends_on:
-        react-app:
-          condition: service_started
-        todo-backend:
-          condition: service_healthy
+      - react-app
+      - todo-backend
         
   debug-helper:
     image: busybox

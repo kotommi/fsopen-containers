@@ -14,7 +14,8 @@ FROM node:16 as build-stage
 
 WORKDIR /usr/src/app
 
-ENV REACT_APP_BACKEND_URL=http://localhost:3000
+# should be loaded from .env
+#ENV REACT_APP_BACKEND_URL=http://localhost:7979
 
 COPY --from=test-stage /usr/src/app .
 

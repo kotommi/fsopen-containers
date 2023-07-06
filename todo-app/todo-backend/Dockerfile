@@ -1,10 +1,12 @@
 FROM node:16.20.1-bookworm
+RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
+
+ENV NODE_ENV production
 
 WORKDIR /usr/src/app
-
 COPY --chown=node:node . .
 
 RUN npm ci --only=production
 
 USER node
-CMD npm start
+CMD ["dumb-init", "node", "./bin/www"]
