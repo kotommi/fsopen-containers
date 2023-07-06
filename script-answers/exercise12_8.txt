@@ -1,0 +1,128 @@
+Script started on 2023-07-04 15:34:20+03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="103" LINES="24"]
+(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications/script-answers[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications/script-answers[00m$ sudo docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+4488a05d35d2   mongo     "docker-entrypoint.s…"   44 minutes ago   Up 40 minutes   0.0.0.0:3456->27017/tcp, :::3456->27017/tcp   todo-backend-mongo-1
+(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications/script-answers[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications/script-answers[00m$
+[K(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications/script-answers[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications/script-answers[00m$ sudo docker e[Kcontainer exec todo-backend-mong-1 bash[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ke[K exec -it todo-backend-mongo-1 nas[K[K[Kbash
+[?2004hroot@4488a05d35d2:/# ls
+[?2004l
+bin   data  docker-entrypoint-initdb.d	home	    lib    lib64   media  opt	root  sbin  sys  usr
+boot  dev   etc				js-yaml.js  lib32  libx32  mnt	  proc	run   srv   tmp  var
+[?2004hroot@4488a05d35d2:/# mongosh
+[?2004l
+]0;mongosh mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	64a4124a8b91a355df2e8163
+Connecting to:		[1m[32mmongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1[0m
+Using MongoDB:		6.0.7
+[1m[33mUsing Mongosh[0m:		1.10.1
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the [1mdisableTelemetry()[0m command.
+
+[1G[0J [1G[1G[0Jtest> [7Gshow dbs
+
+Uncaught 
+[1m[31mMongoServerError[0m: command listDatabases requires authentication
+[1G[0Jtest> [7G
+
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+[1G[0Jtest> [7G
+
+[?2004hroot@4488a05d35d2:/# mongosh -u root -p example
+[?2004l
+]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	64a4126c1f4a0282cd754a1b
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1[0m
+Using MongoDB:		6.0.7
+[1m[33mUsing Mongosh[0m:		1.10.1
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2023-07-04T11:54:12.361+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-07-04T11:54:13.232+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gdw[1G[0Jtest> d[8G[1G[0Jtest> [7Gshow dbs
+
+[1madmin[0m         100.00 KiB
+[1mconfig[0m        108.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   72.00 KiB
+[1G[0Jtest> [7Guse the_database
+
+switched to db the_database
+[1G[0Jthe_database> [15Gshow colel[1G[0Jthe_database> show cole[24G[1G[0Jthe_database> show col[23Glections
+
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.find({})
+
+[
+  {
+    _id: ObjectId("64a40789ccb67d5ed2fa075d"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("64a40789ccb67d5ed2fa075e"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("64a40c6d3382e4c8db7c4c80"),
+    __v: [33m0[39m,
+    done: [33mtrue[39m,
+    text: [32m'older todo'[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todoss[1G[0Jthe_database> db.todos[23G.inserto[1G[0Jthe_database> db.todos.insertOne[33G({text[33mtext[39m: [33m2[39m[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [41G[32m"[39m[32ms[39m[32mh[39m[32me[39m[32ml[39m[32ml[39m [32mn[39m[32mo[39m[32mt[39m[32me[39m[32m"[39m, d[36mdo[39mdone:fal[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m"shell note"[39m, [33mdone[39m:fa[62G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m"shell note"[39m, [33mdone[39m:f[61G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m"shell note"[39m, [33mdone[39m:[60G fals[33mfalse[39m})
+
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("64a4130e1f4a0282cd754a1c")
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m"shell note"[39m, [33mdone[39m: [33mfalse[39m})[68G[1G[0Jthe_database> db.todos.find({})[32G
+
+[
+  {
+    _id: ObjectId("64a40789ccb67d5ed2fa075d"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("64a40789ccb67d5ed2fa075e"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("64a40c6d3382e4c8db7c4c80"),
+    __v: [33m0[39m,
+    done: [33mtrue[39m,
+    text: [32m'older todo'[39m
+  },
+  {
+    _id: ObjectId("64a4130e1f4a0282cd754a1c"),
+    text: [32m'shell note'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15G
+
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+[1G[0Jthe_database> [15G
+
+[?2004hroot@4488a05d35d2:/# ^C[?2004l
+[?2004h[?2004l
+
+[?2004hroot@4488a05d35d2:/# ^C[?2004l
+[?2004h[?2004l
+
+[?2004hroot@4488a05d35d2:/# [?2004l
+
+exit
+(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications/script-answers[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications/script-answers[00m$ ^C
+(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications/script-answers[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications/script-answers[00m$ exit
+
+Script done on 2023-07-04 15:40:24+03:00 [COMMAND_EXIT_CODE="130"]

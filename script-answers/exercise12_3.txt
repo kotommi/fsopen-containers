@@ -1,0 +1,27 @@
+Script started on 2023-06-30 15:14:43+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications[00m$ sudo docker contai 
+ner -[Kks[K[Kls -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                        PORTS     NAMES
+95606290e732   ubuntu        "bash"     13 minutes ago   Exited (0) 38 seconds ago               pedantic_lalande
+ac6643be0877   ubuntu        "bash"     29 minutes ago   Exited (127) 28 minutes ago             festive_hopper
+43b81c9455ab   hello-world   "/hello"   29 minutes ago   Exited (0) 29 minutes ago               naughty_proskuriakova
+(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications[00m$ sudo docker start  
+-i pedantic-lalande
+Error response from daemon: No such container: pedantic-lalande
+(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications[00m$ sudo docker start -i pedantic-lalande[1Plalande_lalande
+[?2004h]0;root@95606290e732: /root@95606290e732:/# nano /usr/src/app/index.js 
+[?2004l
+[?2004h[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;34H(B[0;7m[ Reading... ](B[m[22;33H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 6.2 [17b/usr/src/app/index.js [25b [1;79H(B[m
+[23d(B[0;7m^G(B[m Help[14G(B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut[53G(B[0;7m^T(B[m Execute   (B[0;7m^C(B[m Location
+[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste     (B[0;7m^J(B[m Justify   (B[0;7m^/(B[m Go To Line
+[2d[?12l[?25h[?25l[1;55H(B[0;7m*[79G(B[m[?12l[?25h
+[2dc[?25l[?12l[?25ho[?25l[?12l[?25hn[?25l[?12l[?25hs[?25l[?12l[?25ho[?25l[?12l[?25hl[?25l[?12l[?25he[?25l[?12l[?25h.[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25hg[?25l[?12l[?25h([?25l[?12l[?25h  [?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h'[?25l[?12l[?25hH[?25l[?12l[?25he[?25l
+[22d[K[?12l[?25h[2;16Hl[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25h[42m [49m(B[m[?25l[?12l[?25h w[?25l[?12l[?25ho[?25l[?12l[?25hr[?25l[?12l[?25hl[?25l[?12l[?25hd[?25l[?12l[?25h![?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[42m [49m(B[m[K[?25l[?12l[?25h W[?25l[?12l[?25ho[?25l[?12l[?25hr[?25l[?12l[?25hl[?25l[?12l[?25hd[?25l[?12l[?25h[2;13H(B[0;1m[35m'Hello World'[39m(B[m[?25l[?12l[?25h)[?25l[23;14H [6b(B[0;7mM-D(B[m DOS Format      (B[0;7mM-A(B[m Append [9b(B[0;7mM-B(B[m Backup File[K[24;2H(B[0;7mC(B[m Cancel [10b(B[0;7mM-M(B[m Mac Format      (B[0;7mM-P(B[m Prepend [8b(B[0;7m^T(B[m Browse[K
+[22d(B[0;7mFile Name to Write: /usr/src/app/index.js [37b [22;42H(B[m[?12l[?25h[?25l[22;33H[1K (B[0;7m[ Writing... ](B[m[K[1;55H(B[0;7m [79G(B[m[22;33H(B[0;7m[ Wrote 1 line ](B[m[23;14H(B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut [6b(B[0;7m^T(B[m Execute   (B[0;7m^C(B[m Location[24;2H(B[0;7mX(B[m Exit      (B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste     (B[0;7m^J(B[m Justify   (B[0;7m^/(B[m Go To Line[?12l[?25h[2;27H[?25l
+[22d[J[24d[?12l[?25h[24;1H[?1049l[23;0;0t
+[?1l>[?2004l[?2004h]0;root@95606290e732: /root@95606290e732:/# [Kexit
+[?2004l
+exit
+(base) ]0;tomko@tomkola: ~/kontit/part12-containers-applications[01;32mtomko@tomkola[00m:[01;34m~/kontit/part12-containers-applications[00m$ exit
+
+Script done on 2023-06-30 15:16:01+03:00 [COMMAND_EXIT_CODE="0"]

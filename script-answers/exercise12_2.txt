@@ -1,0 +1,22 @@
+Script started on 2023-06-30 15:01:10+03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+(base) ]0;tomko@tomkola: ~[01;32mtomko@tomkola[00m:[01;34m~[00m$ docker run container [K[K[K[K[K[K[K[K[K[K[K[K[K[Kcontainer run -it ubuntu bash
+docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+(base) ]0;tomko@tomkola: ~[01;32mtomko@tomkola[00m:[01;34m~[00m$ sudo !!
+sudo docker container run -it ubuntu bash
+[?2004h]0;root@95606290e732: /root@95606290e732:/# ls
+[?2004l[0m[01;36mbin[0m   [01;34mdev[0m  [01;34mhome[0m  [01;36mlib32[0m  [01;36mlibx32[0m  [01;34mmnt[0m  [01;34mproc[0m  [01;34mrun[0m   [01;34msrv[0m  [30;42mtmp[0m  [01;34mvar[0m
+[01;34mboot[0m  [01;34metc[0m  [01;36mlib[0m   [01;36mlib64[0m  [01;34mmedia[0m   [01;34mopt[0m  [01;34mroot[0m  [01;36msbin[0m  [01;34msys[0m  [01;34musr[0m
+[?2004h]0;root@95606290e732: /root@95606290e732:/# mkdir /y usr/src/app
+[?2004l[?2004h]0;root@95606290e732: /root@95606290e732:/# touch u /usr/
+bin/     include/ lib32/   libexec/ local/   share/   
+games/   lib/     lib64/   libx32/  sbin/    src/     
+]0;root@95606290e732: /root@95606290e732:/# touch /usr/
+bin/     include/ lib32/   libexec/ local/   share/   
+games/   lib/     lib64/   libx32/  sbin/    src/     
+]0;root@95606290e732: /root@95606290e732:/# touch /usr/src/app/index.js
+[?2004l[?2004h]0;root@95606290e732: /root@95606290e732:/# [Kexit
+[?2004lexit
+(base) ]0;tomko@tomkola: ~[01;32mtomko@tomkola[00m:[01;34m~[00m$ exit
+
+Script done on 2023-06-30 15:02:40+03:00 [COMMAND_EXIT_CODE="0"]
